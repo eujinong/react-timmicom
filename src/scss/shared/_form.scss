@@ -1,0 +1,17 @@
+.form-group {
+  position: relative;
+  label {
+    position: absolute;
+    left: $input-border-width + $input-padding-x;
+    top: $input-border-width;
+    right: $input-border-width + $input-padding-x;
+    padding-top: $input-padding-y;
+    height: $input-padding-y + $font-size-base + $input-padding-y - $input-border-width;
+    color: #A5D0F8;
+    background-color: $secondary;
+  }
+  .form-control {
+    padding-top: $input-padding-y + $font-size-base + $input-padding-y;
+    min-height: 96px;
+  }
+}

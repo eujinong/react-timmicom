@@ -1,0 +1,27 @@
+@mixin triangle-before($color) {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -24px;
+    left: 0;
+    border-bottom: 25px solid transparent;
+    border-left: 45px solid $color;
+    z-index: 2;
+  }
+}
+
+@mixin triangle-after($color) {
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -24px;
+    right: 0;
+    border-top: 25px solid transparent;
+    border-right: 45px solid $color;
+    z-index: 2;
+  }
+}

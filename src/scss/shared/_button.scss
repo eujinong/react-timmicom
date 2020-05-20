@@ -1,0 +1,134 @@
+.btn {
+  max-width: 100%;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+  background-color: transparent;
+
+  &:hover {
+    .btn-outer {    
+      color: darken($yiq-text-light, 10%);
+    }
+  }
+  &:focus {
+    outline: 0;
+  }
+
+  .btn-outer {
+    @include transition(color .3s ease-in-out);
+    padding: 1px 2px;
+    margin: 16px 0;
+    position: relative;
+    background-color: $yiq-text-dark;
+    color: $yiq-text-light;
+    width: 100%;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      border-left: 38px solid transparent;
+      border-bottom: 16px solid $yiq-text-dark;
+      top: -16px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      border-right: 38px solid transparent;
+      border-top: 16px solid $yiq-text-dark;
+      bottom: -16px;
+      z-index: 1;
+    }
+  }
+  
+  .btn-inner {
+    position: relative;
+    display: block;
+    padding: 0 38px;
+    line-height: 1;
+    background-color: $primary;
+    width: 100%;
+    &:before {
+      content: "";
+      position: absolute;
+      right: 0px;
+      left: 0px;
+      border-left: 37px solid transparent;
+      border-bottom: 15px solid $primary;
+      top: -15px;
+
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      border-right: 37px solid transparent;
+      border-top: 15px solid $primary;
+      bottom: -15px;
+      z-index: 2;
+    }
+  }
+
+  &.btn-light {
+    &:hover {
+      .btn-outer {
+        color: darken($yiq-text-dark, 10%);
+      }
+    }
+    .btn-outer {
+      background-color: $yiq-text-light;
+      color: $yiq-text-dark;
+      
+      &:before {
+        border-bottom-color: $yiq-text-light;
+      }
+      &:after {
+        border-top-color: $yiq-text-light;
+      }
+    }
+    .btn-inner {
+      background-color: $yiq-text-light;
+      &:before {
+        border-bottom-color: $yiq-text-light;
+      }
+      &:after {
+        border-top-color: $yiq-text-light;
+      }
+    }
+  }
+
+
+  &.btn-lg {
+    .btn-outer {
+      margin: 22px 0;
+      &:before {
+        border-bottom-width: 22px;
+        top: -22px;
+      }
+      &:after {
+        border-top-width: 22px;
+        bottom: -22px;
+      }
+    }
+    .btn-inner {
+      padding: 2px 48px;
+      &:before {
+        border-bottom-width: 21px;
+        top: -21px;
+      }
+      &:after {
+        border-top-width: 21px;
+        bottom: -21px;
+      }
+    }
+
+  }
+}
+

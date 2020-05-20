@@ -1,0 +1,38 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, body {
+  font-variant-ligatures: none;
+}
+
+#app {
+  overflow-x: hidden;
+}
+
+.link {
+  color: $odd;
+  font-weight: $font-weight-bold;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    color: darken($odd, 15%);
+  }
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 19px;
+    background-origin: 0 3px;
+    margin-right: 12px;
+    background-size: 16px 16px;
+    background-image: url('../images/hexagon.svg');
+    background-repeat: no-repeat;
+  }
+  &:after {
+    margin-left: 10px;
+    content:"→";
+  }
+}
